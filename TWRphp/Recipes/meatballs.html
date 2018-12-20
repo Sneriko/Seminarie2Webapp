@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tasty Recipes Webpage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="mystyle.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container-fluid navigationbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Calendar/calendar.html">Calendar</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recipes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Swedish meatballs</a>
+                        <a class="dropdown-item" href="#">Swedish pancakes</a>
+                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn  my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
+
+<div class="container-fluid maincontent">
+    <div class="row">
+        <div class="col header">
+          <h1>Swedish Meatballs</h1>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <img class="img-fluid rounded" src="../Images/meatballs.jpg" alt="">
+      </div>
+
+
+      <div class="col-sm-6">
+        <h2>Ingredients</h2>
+
+        <ul class="ingredients">
+          <li>2 slices fresh white bread</li>
+          <li>1/4 cup milk</li>
+          <li>3 tablespoons clarified butter, divided</li>
+          <li>1/2 cup finely chopped onion</li>
+          <li>A pinch plus 1 teaspoon salt</li>
+          <li>3/4 pound ground chuck</li>
+          <li>3/4 pound ground pork</li>
+          <li>2 large egg yolks</li>
+          <li>1/2 teaspoon black pepper</li>
+          <li>1/4 teaspoon ground allspice</li>
+          <li>1/4 teaspoon freshly grated nutmeg</li>
+          <li>1/4 cup plain flour</li>
+          <li>3 cups beef broth</li>
+          <li>1/4 cup double cream</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+
+    <h2>Method</h2>
+
+    <ol class="method">
+      <li>Preheat oven to 200 degrees F.</li>
+      <li>Tear the bread into pieces and place in a small mixing bowl
+        along with the milk. Set aside.</li>
+      <li>In a 12-inch straight sided saute pan over medium heat,
+        melt 1 tablespoon of the butter. Add the onion and a pinch of salt
+        and sweat until the onions are soft. Remove from the heat and set aside.</li>
+      <li>In the bowl of a stand mixer, combine the bread and milk mixture,
+        ground chuck, pork, egg yolks, 1 teaspoon of kosher salt, black pepper,
+        allspice, nutmeg, and onions. Beat on medium speed for 1 to 2 minutes.</li>
+      <li>Using a scale, weigh meatballs into 1-ounce portions and place on a
+        sheet pan. Using your hands, shape the meatballs into rounds.</li>
+      <li>Heat the remaining butter in the saute pan over medium-low heat,
+        or in an electric skillet set to 250 degrees F. Add the meatballs
+        and saute until golden brown on all sides, about 7 to 10 minutes.
+        Remove the meatballs to an ovenproof dish using a slotted spoon and
+        place in the warmed oven.</li>
+      <li>Once all of the meatballs are cooked, decrease the heat to low and
+        add the flour to the pan or skillet. Whisk until lightly browned,
+        approximately 1 to 2 minutes. Gradually add the beef stock and whisk
+        until sauce begins to thicken. Add the cream and continue to cook until
+        the gravy reaches the desired consistency. Remove the meatballs from the
+        oven, cover with the gravy and serve.</li>
+    </ol>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    margin: 2% 0%;
+}
+
+img {
+    max-width: 50%;
+}
+
+ul {
+    margin: 0px;
+}
+
+#preps {
+    background-color: bisque;
+    font-size: 20px;
+}
+
+#method {
+    margin-right: 30%;
+}
+
+.com {
+    border: 3px solid black;
+}

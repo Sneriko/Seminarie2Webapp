@@ -1,0 +1,46 @@
+.navigationbar.container-fluid {
+  background-color: rgba(205, 136, 175,0.7);
+}
+
+.maincontent.container-fluid {
+    background-image: url("../Images/recipebg.jpg");
+}
+
+h1 {
+    font-size: 100px;
+}
+
+.col.header h1 {
+    font-family: "Serif";
+    font-size: 50px;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    background-color: grey;
+    padding: 20px;
+}
+
+h2 {
+  font-family: "Times New Roman";
+  font-size: 30px;
+  padding: 20px;
+}
+
+.method {
+  margin-right: 20%;
+
+}
+
+.method li {
+  padding: 5px;
+}
+
+#entry {
+    width: 500px;
+}
