@@ -1,5 +1,18 @@
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: rgba(205, 136, 175,0.7);
+}
 
+a{
+    color: black;
+}
 
+button {
+    background-color: rgb(151, 117, 170);
+}
 
 
 .row {

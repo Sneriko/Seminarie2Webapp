@@ -26,6 +26,10 @@ ul {
     margin: 0px;
 }
 
+a{
+    color: black;
+}
+
 #preps {
     background-color: bisque;
     font-size: 20px;
