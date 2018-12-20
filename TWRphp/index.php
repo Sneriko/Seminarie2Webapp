@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,22 +32,30 @@
                         Recipes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="Recipes/recipes.php?id=0">Swedish meatballs</a>
-                        <a class="dropdown-item" href="Recipes/recipes.php?id=1">Swedish pancakes</a>
+                        <a class="dropdown-item" href="Recipes/recipes.php?id=meatballs">Swedish meatballs</a>
+                        <a class="dropdown-item" href="Recipes/recipes.php?id=pancakes">Swedish pancakes</a>
                     </div>
                 </li>
             </ul>
         </div>
-        <form class="form-inline my-2 my-lg-0" action="login.inc.php" method="post">
+        <?php
+        if(!isset($_SESSION['userid'])){
+        echo '<form class="form-inline my-2 my-lg-0" action="Login/login.inc.php" method="post">
             <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username">
             <input class="form-control mr-sm-2" type="password" name="pwd" placeholder="Password">
             <button class="btn  my-2 my-sm-0" type="submit" name="login-submit">Login</button>
             <!--<button class="btn  my-2 my-sm-0" type="submit" name="signup-submit">Sign up</button>-->
-        </form>
-        <button class="btn  my-2 my-sm-0" style="color: aliceblue"><a href="signup.php">Sign up</a></button>
-        <form class="form-inline my-2 my-lg-0" action="includes/logout.inc.php" method="post">
-            <button class="btn  my-2 my-sm-0" type="submit" name="logout-submit">Logout</button>
-        </form>
+            </form>';
+            }
+            ?>
+        <button class="btn  my-2 my-sm-0" style="color: aliceblue"><a href="Signup/signup.php">Sign up</a></button>
+        <?php
+            if(isset($_SESSION['userid'])) {
+                echo '<form class="form-inline my-2 my-lg-0" action="Logout/logout.inc.php" method="post">
+                    <button class="btn  my-2 my-sm-0" type="submit" name="logout-submit">Logout</button>
+                    </form>';
+            }
+                ?>
     </nav>
 </div>
 

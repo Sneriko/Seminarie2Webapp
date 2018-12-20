@@ -36,36 +36,40 @@ $_SESSION['recipe'] = $_GET['id'];
                         Recipes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="recipes.php?id=0">Swedish meatballs</a>
-                        <a class="dropdown-item" href="recipes.php?id=1">Swedish pancakes</a>
+                        <a class="dropdown-item" href="recipes.php?id=meatballs">Swedish meatballs</a>
+                        <a class="dropdown-item" href="recipes.php?id=pancakes">Swedish pancakes</a>
                     </div>
                 </li>
             </ul>
         </div>
-        <form class="form-inline my-2 my-lg-0" action="login.inc.php" method="post">
+        <?php
+        if(!isset($_SESSION['userid'])){
+            echo '<form class="form-inline my-2 my-lg-0" action="../Login/login.inc.php" method="post">
             <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username">
             <input class="form-control mr-sm-2" type="password" name="pwd" placeholder="Password">
             <button class="btn  my-2 my-sm-0" type="submit" name="login-submit">Login</button>
             <!--<button class="btn  my-2 my-sm-0" type="submit" name="signup-submit">Sign up</button>-->
-        </form>
-        <button class="btn  my-2 my-sm-0"><a href="signup.php">Sign up</a></button>
-        <form class="form-inline my-2 my-lg-0" action="includes/logout.inc.php" method="post">
-            <button class="btn  my-2 my-sm-0" type="submit" name="logout-submit">Logout</button>
-        </form>
+            </form>';
+        }
+        ?>
+        <button class="btn  my-2 my-sm-0" style="color: aliceblue"><a href="../Signup/signup.php">Sign up</a></button>
+        <?php
+        if(isset($_SESSION['userid'])) {
+            echo '<form class="form-inline my-2 my-lg-0" action="../Logout/logout.inc.php" method="post">
+                    <button class="btn  my-2 my-sm-0" type="submit" name="logout-submit">Logout</button>
+                    </form>';
+        }
+        ?>
     </nav>
 </div>
 
 <?php
 
 $var = $_GET["id"];
-switch ($var) {
-    case 0:
-        $recipe = simplexml_load_file("meatballs.xml") or die("Error: Cannot create object");
-        break;
-    case 1;
-        $recipe = simplexml_load_file("pancakes.xml") or die("Error: Cannot create object");
-        break;
-}
+
+$var2 = $var . ".xml";
+
+$recipe = simplexml_load_file($var2) or die("Error: Cannot create object");
 
 echo    "<h1>".$recipe->title."</h1>
         
@@ -87,7 +91,7 @@ foreach ($recipe->recipetext->li as $value){
 echo "</ol>
     </div>";
 
-if($_SESSION['active'] == '1') {
+if(isset($_SESSION['userid'])) {
 
     echo "<form action='store-entry.php' method='post'>
         <div>
@@ -110,11 +114,11 @@ $i = 0;
 while($row = mysqli_fetch_assoc($result)){
 
     $idcomment = $row['id'];
-    if ($_SESSION['recipe'] == $row['recipe']) {
+    if ($_GET['id'] == $row['recipe']) {
         $comment = nl2br($row['comment']);
         echo "<div style='color: blue'>".$row['username']."</div>";
         echo "<div style='border: 1px solid black; width: 50%; height: auto'>" . $comment . "</div>";
-        if ($_SESSION['username'] == $row['username']) {
+        if (isset($_SESSION['userid']) && $_SESSION['username'] == $row['username']) {
             echo "<a  style='color: beige' href='delete-entry.php?id=$idcomment'><button style='background-color: beige'>Delete</button></a>";
         }
 
